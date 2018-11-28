@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basket</title>
+</head>
+<body>
+    <script>
+        var basket = [2000, 4500, 9999, 1700];
+
+        function countBasketPrice(arr) {
+            var price = 0;
+            for (i of arr) {
+                price += i;
+            }
+            return (alert("Сумма товаров: " + price));
+        }
+        countBasketPrice(basket);
+        basket.push(1000);
+        countBasketPrice(basket);
+
+    </script>
+</body>
+</html>
