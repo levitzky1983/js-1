@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HomeWork</title>
+</head>
+
+<body>
+    <script>
+        /* task 1*/
+
+        var a = 1,
+            b = 1,
+            c, d;
+        c = ++a;
+        /* переменной 'с' присваивается инкремент префиксной формы от 'a'. Т.е. сначала 'a' увел. на один 'a+1=2', затем присваивается 'c=2'.*/
+        alert(c); // 2
+        d = b++;
+        /* переменной 'd' присваивается инкремент постфиксной формы от 'b'. Т.е. сначала 'd' присваивается'b=1', затем'b' увеличивается на 1 :'b=b+1'*/
+        alert(d); // 1
+        c = (2 + ++a);
+        /* К 2 прибавляем 'a' с инкрементом префиксной формы, т.е. 'a=a+1=2+1=3'*/
+        alert(c); // 5
+        d = (2 + b++);
+        /* К 2 прибавляем 'b' с инкрементом постфиксной формы, т.е. 'b=2', а уже потом увел 'b' на 1 : 'b=b+1=2+1=3*/
+        alert(d); // 4
+        alert(a); // 3
+        alert(b); // 3
+
+        /* task 2*/
+
+        var a = 2;
+        var x = 1 + (a *= 2); // x=1+a*2=1+2*2=5
+
+        /* task 3*/
+
+        var x = parseInt(prompt("Введите целочисленное значение x "));
+        var y = parseInt(prompt("Введите целочисленное значение y "));
+        if (isNaN(x) || isNaN(y)) {
+            alert("Вы ввели неправильное значение переменной");
+        } else if (x >= 0 && y >= 0) {
+            alert(x - y);
+        } else if (x < 0 && y < 0) {
+            alert(x * y);
+        } else if ((x >= 0 && y < 0) || (x < 0 && y >= 0)) {
+            alert(x + y);
+        } else {
+            alert("Фигня какая-то"); // здесь else можно было не писать
+        }
+
+        /* task 4*/
+
+        var x = Math.round(Math.random() * (15.5 + 0.5) - 0.5);
+        /*для равного шанса получения крайних чисел берется диапозон min-0.5 max+0.5*/
+        switch (x) {
+            case 0:
+                alert(0);
+            case 1:
+                alert(1);
+            case 2:
+                alert(2);
+            case 3:
+                alert(3);
+            case 4:
+                alert(4);
+            case 5:
+                alert(5);
+            case 6:
+                alert(6);
+            case 7:
+                alert(7);
+            case 8:
+                alert(8);
+            case 9:
+                alert(9);
+            case 10:
+                alert(10);
+            case 11:
+                alert(11);
+            case 12:
+                alert(12);
+            case 13:
+                alert(13);
+            case 14:
+                alert(14);
+            case 15:
+                alert(15);
+                break;
+            default:
+                alert("Фигня какая-то");
+
+        };
+
+        /* Task 5*/
+
+
+        function sum(a, b) {
+            return (a + b);
+        }
+
+        function sub(a, b) {
+            return (a - b);
+        }
+
+        function mult(a, b) {
+            return (a * b);
+        }
+
+        function div(a, b) {
+            return (a / b);
+        }
+
+
+        /*Task 6*/
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    var result = sum(arg1, arg2);
+                    break;
+                case '-':
+                    var result = sub(arg1, arg2);
+                    break;
+                case '*':
+                    var result = mult(arg1, arg2);
+                    break;
+                case '/':
+                    var result = div(arg1, arg2);
+                    break;
+                default:
+                    alert("Неправильнпая операция");
+            }
+            return (result);
+        }
+        alert(mathOperation(1, 5, "/"));
+
+        /*Task 7*/
+
+        if (null > 0) {
+            alert("null>0");
+        }
+        if (null < 0) {
+            alert("null<0");
+        }
+        if (null == 0) {
+            alert("null==0");
+        }
+        if (null <= 0) {
+            alert("null<=0");
+        }
+        if (null >= 0) {
+            alert("null>=0");
+        }
+        /* в итоге получаем, что именно >= и  <= правильные ответы. Про это большая статья, но что я уяснил, что это связано это с логикой js. 
+        " С точки зрения математики, если у нас есть два числа, x и y, и если x не меньше, чем y, тогда x должно быть больше чем y или равно ему."*/
+
+
+        /*Task 8*/
+
+
+        function power(val, pow) {
+            if (pow == 0) {
+                return 1;
+            } else if (pow == 1) {
+                return val;
+            } else {
+                pow--;
+                
+                return (power(val,pow))*val;
+            }
+        }
+//возможно как-то поще можно сделать?
+
+        alert(power(2, 4));
+
+    </script>
+</body>
+
+</html>
