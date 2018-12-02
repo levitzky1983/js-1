@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task-1</title>
+</head>
+
+<body>
+    <script>
+        var number, flag;
+        var obj = {};
+
+        do {
+            flag = false;
+            number = prompt("Введите число от 0 до 999 или -1 - закончить", 0);
+            if (number == -1) {
+                break;
+            } else {
+                if (isNaN(number) || (number < 0) || (number > 999) || (!isInteger(number))) {
+                    alert("Вы ввели неверное число");
+                } else {
+                    flag = true;
+                }
+            }
+        }
+        while (!flag)
+
+        f(number);
+        console.log(obj);
+
+        function isInteger(num) {
+            var a = parseFloat(num);
+            return (a ^ 0) === a;
+        }
+
+
+        function f(num) {
+
+            if (num == -1) {
+                return null;
+            } else {
+
+                var mas = num.split("");
+                if (num < 10) {
+                    obj.ed = mas[0];
+                    return console.log("единицы: " + obj.ed);
+                } else if ((num >= 10) && (num < 100)) {
+                    obj.dec = mas[0];
+                    obj.ed = mas[1];
+                    return console.log("десятки: " + obj.dec + "\nединицы: " + obj.ed);
+                } else {
+                    obj.hun = mas[0];
+                    obj.dec = mas[1];
+                    obj.ed = mas[2];
+                    return console.log("сотни: " + obj.hun + "\nдесятки: " + obj.dec + "\nединицы: " + obj.ed);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
