@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task-3</title>
+</head>
+
+<body>
+    <script>
+        var questions = [{
+                question: "В какой стране денежная единица рубль?",
+                a1: "США",
+                a2: "Китай",
+                a3: "Россия",
+                a4: "Зимбабе",
+                correct: 3,
+                correctTxt: "Россия",
+                money: 100
+            },
+            {
+                question: "В какой месяц празднуют день ВДВ?",
+                a1: "Август",
+                a2: "Январь",
+                a3: "Не празднуют",
+                a4: "июнь",
+                correct: 1,
+                correctTxt: "Август",
+                money: 500
+            },
+            {
+                question: "Название команды НХЛ из Вашингтона?",
+                a1: "Devils",
+                a2: "Capitals",
+                a3: "Hunters",
+                a4: "Red wings",
+                correct: 2,
+                correctTxt: "Capitals",
+                money: 1000
+            }
+        ]
+        game();
+
+        function game() {
+            var money = 0;
+            for (var i = 0; i <= questions.length - 1; i++) {
+                do {
+                    var answer = prompt(questions[i].question + "\n1 " + questions[i].a1 + "\n2 " + questions[i].a2 + "\n3 " + questions[i].a3 + "\n4 " + questions[i].a4 + "\nЗа правильный ответ Вы получите: "+questions[i].money+"рублей"+"\nЕсли ответите неправильно, то ваши деньги сгорят и игра закончится"+"\n-1-Беру деньги");
+                } while (isAnswer(answer));
+                if (answer == -1) {
+                    break;
+                } else if (answer == questions[i].correct) {
+                    money += questions[i].money;
+                    alert("Это правильный ответ");
+                } else {
+                    money = 0;
+                    alert("Это неправильный ответ.\nПравильный ответ: " + questions[i].correctTxt);
+                    break;
+                }
+            }
+            alert("Игра окончена.\nВаш выигрыш составил: " + money + "рублей");
+        }
+
+
+        function isAnswer(event) {
+            if (event == -1) {
+                return false;
+            } else if (isNaN(event) || (event < 1) || (event > 4)) {
+                alert('Вы ввели недопустимый ответ');
+                return true;
+            } else
+                return false;
+
+        }
+
+    </script>
+</body>
+
+</html>
