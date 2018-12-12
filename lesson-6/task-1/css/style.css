@@ -1,0 +1,39 @@
+html,
+body {
+    font-size: 10px;
+    font-family: "Arial", sans-serif;
+    background-color: bisque;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.preview {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.preview img {
+    margin: 20px;
+}
+
+.preview img:hover {
+    cursor: cell;
+}
+
+.big-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.big-image img {
+    cursor: pointer;
+}
